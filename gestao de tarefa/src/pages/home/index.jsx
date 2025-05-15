@@ -1,4 +1,4 @@
-import { ButtonAdicionar, ButtonPesquisar, ButtonSair, Container, ContainerTarefas, Header, ImputTarefa, InputPesquisa, Main, BarraPesquisaWrapper, BarraPesquisa, InputAdicionarContainer } from "./style";
+import { ButtonAdicionar, ButtonPesquisar, ButtonSair, Container, ContainerTarefas, Header, InputTarefa, InputPesquisa, Main, BarraPesquisaWrapper, BarraPesquisa, InputAdicionarContainer } from "./style";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import { useState, useEffect } from "react";
@@ -40,7 +40,7 @@ function Home() {
         setNovoTitulo("");
       } catch (error) {
         console.error("Erro ao adicionar tarefa:", error);
-        alert("Erro ao adicionar tarefa.");
+        alert(`erro ao adicionar tarefa: ${error.response.data.message}`);
       }
     } else if (!token) {
       alert("Você precisa estar logado para adicionar tarefas.");
@@ -80,7 +80,7 @@ function Home() {
       </Header>
       <Main>
         <InputAdicionarContainer>
-          <ImputTarefa
+          <InputTarefa
             value={novoTitulo}
             onChange={(e) => setNovoTitulo(e.target.value)}
             placeholder="Digite o título da tarefa"

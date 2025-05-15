@@ -77,7 +77,7 @@ function Cadastro() {
         <Button type="button" onClick={async () => {
           const cadastroSucesso = await cadastrarUsuario();
           if (cadastroSucesso) {
-            navigate('/Home');
+            navigate('/');
           }
         }}>Cadastrar</Button>
       </Form>

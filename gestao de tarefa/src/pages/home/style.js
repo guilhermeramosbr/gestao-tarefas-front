@@ -87,7 +87,7 @@ export const InputAdicionarContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-export const ImputTarefa = styled.input`
+export const InputTarefa = styled.input`
   padding: 12px;
   border: 1px solid #d1d5db;
   border-radius: 6px 0 0 6px;
